@@ -1,0 +1,36 @@
+header {
+  background: var(--purpleColor);
+  padding: 2rem 1rem;
+  padding-bottom: 6rem;
+  background-image: url('../../assets/mobile/bg-pattern-header.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.theme_switch_container {
+  display: flex;
+  align-items: center;
+}
+
+.theme_switch {
+  background-color: white;
+  padding: 0.25rem;
+  width: 3rem;
+  height: 1.25rem;
+  border-radius: 1rem;
+  margin: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  box-sizing: unset;
+}
+
+.circle {
+  background-color: var(--purpleColor);
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 100%;
+  transition: var(--smoothTransition);
+}

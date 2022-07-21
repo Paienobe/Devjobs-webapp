@@ -1,0 +1,45 @@
+.filter {
+  background-color: var(--secondaryBackground);
+  padding: 1.25rem 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 6.5rem;
+  left: 1rem;
+  right: 1rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.filter input {
+  padding: 0.5rem 0;
+  background-color: transparent;
+  border: none;
+  width: 70%;
+  outline: none;
+  color: var(--textColor);
+  font-size: 16px;
+}
+
+.filter input::placeholder {
+  font-size: 16px;
+  color: var(--textColor);
+}
+
+.filter input:focus {
+  border-bottom: 1px solid var(--textColor);
+}
+
+.filter_options {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search_btn {
+  background-color: var(--purpleColor);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
