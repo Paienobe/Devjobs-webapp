@@ -1,0 +1,48 @@
+.full_detail_card {
+  background-color: var(--secondaryBackground);
+  padding: 1.5rem 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.full_detail_card h1 {
+  color: white;
+  font-size: x-large;
+  font-weight: 600;
+}
+
+.apply_btn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--purpleColor);
+  color: white;
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+.description,
+.requirements {
+  margin: 1rem 0;
+  margin-top: 2rem;
+}
+
+.requirements h1 {
+  margin-bottom: 1rem;
+}
+
+ul,
+ol {
+  margin: 2rem 0;
+}
+
+li {
+  list-style-position: inside;
+  margin-bottom: 1rem;
+}
+
+.role h1 {
+  margin-bottom: 1.5rem;
+}
