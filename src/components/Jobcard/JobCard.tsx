@@ -1,5 +1,4 @@
 import React from 'react'
-import { JobType } from '../../types/types'
 import './JobCard.css'
 import { logos } from './logo_imports'
 

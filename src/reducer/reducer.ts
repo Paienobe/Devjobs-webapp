@@ -1,4 +1,3 @@
-import { type } from 'os'
 import data from '../data/data.json'
 import { StateType } from '../types/types'
 
