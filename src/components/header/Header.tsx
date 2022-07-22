@@ -3,12 +3,15 @@ import './Header.css'
 import logo from '../../assets/desktop/logo.svg'
 import sun from '../../assets/desktop/icon-sun.svg'
 import moon from '../../assets/desktop/icon-moon.svg'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   const [isDark, setIsDark] = useState(true)
   return (
     <header>
-      <img src={logo} alt='logo' />
+      <Link to='/'>
+        <img src={logo} alt='logo' />
+      </Link>
 
       <div className='theme_switch_container'>
         <img src={sun} alt='sun_logo' />

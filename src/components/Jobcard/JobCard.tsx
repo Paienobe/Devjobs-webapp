@@ -30,11 +30,7 @@ const JobCard = ({
         className='logo_container'
         style={{ backgroundColor: logoBackground }}
       >
-        <img
-          src={logos[`${logo.toLocaleLowerCase()}`]}
-          alt='company_logo'
-          className='company_logo'
-        />
+        <img src={logos[logo]} alt='company_logo' className='company_logo' />
       </div>
 
       <div className='job_card_details'>
