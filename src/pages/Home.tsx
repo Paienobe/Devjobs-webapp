@@ -11,7 +11,9 @@ const Home = () => {
 
   return (
     <main className='home'>
-      <Filter />
+      <div className='filter_main_container'>
+        <Filter />
+      </div>
       <section className='jobs_container'>
         {jobs?.map((job) => {
           return (

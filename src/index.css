@@ -11,6 +11,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -28,6 +29,13 @@ a {
 .home,
 .details_page {
   padding: 1rem;
+}
+
+.filter_main_container {
+  position: absolute;
+  top: 5.5rem;
+  left: 1rem;
+  right: 1rem;
 }
 
 .jobs_container {
