@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useGlobalContext } from '../context/context'
-import { useParams } from 'react-router-dom'
+import { useParams, useLocation } from 'react-router-dom'
 import CompanyCard from '../components/company_card/CompanyCard'
 import FullDetailCard from '../components/full_details/FullDetailCard'
 import Footer from '../components/footer/Footer'
@@ -13,6 +13,12 @@ const DetailsPage = () => {
   const selectedJob = jobs!.find((job) => {
     return job.company.toLowerCase() === companyName
   })
+
+  const location = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location])
 
   return (
     <>
