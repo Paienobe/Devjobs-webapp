@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Filter from '../components/filter/Filter'
 import JobCard from '../components/Jobcard/JobCard'
 import { useGlobalContext } from '../context/context'
@@ -8,6 +8,10 @@ const Home = () => {
   const globalContext = useGlobalContext()
   const [shownJobs, setShownJobs] = useState(8)
   const jobs = globalContext?.state.slice(0, shownJobs)
+
+  useEffect(() => {
+    window.innerWidth >= 950 && setShownJobs(shownJobs + 10)
+  })
 
   return (
     <main className='home'>

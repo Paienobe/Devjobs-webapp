@@ -45,3 +45,37 @@
   font-weight: bold;
   color: white;
 }
+
+@media (min-width: 640px) {
+  .company_card {
+    padding: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    text-align: left;
+  }
+
+  .card_logo_container {
+    position: static;
+    border-radius: 0;
+    width: 25%;
+    padding: 12% 1rem;
+    margin: 0;
+  }
+
+  .links {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+  }
+
+  .links h2 {
+    margin: 0;
+  }
+
+  .company_card a {
+    margin: 0;
+  }
+}

@@ -4,6 +4,7 @@
   padding: 2rem 1.5rem;
   margin-bottom: 3rem;
   position: relative;
+  width: 100%;
 }
 
 .logo_container {
@@ -57,6 +58,22 @@
   animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-direction: normal;
+}
+
+@media (min-width: 640px) {
+  .job_card {
+    width: 45vw;
+  }
+}
+
+@media (min-width: 950px) {
+  .job_card {
+    width: 26vw;
+  }
+
+  .job_card h1 {
+    font-size: 100%;
+  }
 }
 
 @keyframes pulse {
