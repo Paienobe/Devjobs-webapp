@@ -53,3 +53,24 @@ a {
   border: none;
   transition: var(--smoothTransition);
 }
+
+@media (min-width: 640px) {
+  .home,
+  .details_page {
+    padding: 1rem 2rem;
+  }
+
+  .jobs_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+}
+
+@media (min-width: 950px) {
+  .home,
+  .details_page {
+    padding: 1rem 6rem;
+  }
+}

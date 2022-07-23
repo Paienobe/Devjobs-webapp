@@ -23,9 +23,14 @@ const CompanyCard = ({
       >
         <img src={logos[logo]} alt='logo' />
       </div>
-      <h2>{company}</h2>
-      <p>{website}</p>
-      <a href={website}>Company Site</a>
+      <div className='links'>
+        <div>
+          <h2>{company}</h2>
+          <p>{website}</p>
+        </div>
+
+        <a href={website}>Company Site</a>
+      </div>
     </section>
   )
 }
