@@ -59,7 +59,7 @@
     position: static;
     border-radius: 0;
     width: 25%;
-    padding: 12% 1rem;
+    padding: 4rem 1rem;
     margin: 0;
   }
 
@@ -77,5 +77,22 @@
 
   .company_card a {
     margin: 0;
+  }
+}
+
+@media (min-width: 950px) {
+  .company_card {
+    position: absolute;
+    left: 6rem;
+    right: 6rem;
+    top: 4rem;
+    max-height: 12rem;
+    overflow: hidden;
+  }
+
+  .card_logo_container {
+    width: 15%;
+    padding: 2rem;
+    height: 8rem;
   }
 }
