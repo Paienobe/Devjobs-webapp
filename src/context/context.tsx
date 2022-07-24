@@ -27,12 +27,16 @@ export const AppProvider = ({ children }: AppProviderProps) => {
   const [showExtraFilters, setShowExtraFilters] = useState(false)
 
   useEffect(() => {
-    if (showExtraFilters) {
+    if (showExtraFilters && window.innerWidth < 640) {
       document.body.style.overflowY = 'hidden'
     } else {
       document.body.style.overflowY = 'unset'
     }
   }, [showExtraFilters])
+
+  useEffect(() => {
+    window.innerWidth >= 640 && setShowExtraFilters(true)
+  }, [])
 
   return (
     <AppContext.Provider
