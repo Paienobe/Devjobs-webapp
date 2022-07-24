@@ -14,19 +14,23 @@ const FullDetailCard = ({
 }: JobType) => {
   return (
     <section className='full_detail_card'>
-      <div className='job_card_details'>
-        <p>{postedAt}</p>
-        <p className='dot'></p>
-        <p>{contract}</p>
+      <div className='card_head'>
+        <div>
+          <div className='job_card_details'>
+            <p>{postedAt}</p>
+            <p className='dot'></p>
+            <p>{contract}</p>
+          </div>
+
+          <h1>{position}</h1>
+
+          <p className='job_card_location'>{location}</p>
+        </div>
+
+        <a href={apply} className='apply_btn'>
+          Apply Now
+        </a>
       </div>
-
-      <h1>{position}</h1>
-
-      <p className='job_card_location'>{location}</p>
-
-      <a href={apply} className='apply_btn'>
-        Apply Now
-      </a>
 
       <p className='description'>{description}</p>
 

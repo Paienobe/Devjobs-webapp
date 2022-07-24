@@ -9,3 +9,21 @@ footer {
     padding: 1.5rem 2rem;
   }
 }
+
+@media (min-width: 950px) {
+  footer {
+    padding: 1.5rem 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer h2 {
+    color: white;
+    font-weight: 600;
+  }
+
+  footer .apply_btn {
+    width: 20%;
+  }
+}
