@@ -2,9 +2,10 @@ import React from 'react'
 import './Filter.css'
 import filterIcon from '../../assets/mobile/icon-filter.svg'
 import searchIcon from '../../assets/desktop/icon-search.svg'
+import searchIconPurple from '../../assets/desktop/icon-search-purple.svg'
+
 import locationIcon from '../../assets/desktop/icon-location.svg'
 import { useGlobalContext } from '../../context/context'
-import { log } from 'console'
 
 const Filter = () => {
   const globalContext = useGlobalContext()
@@ -12,17 +13,32 @@ const Filter = () => {
   const setShowExtraFilters = globalContext?.setShowExtraFilters!
   return (
     <section className='filter'>
-      <input type='text' placeholder='Filter by title...' />
-      <div className='filter_options'>
-        <img
-          src={filterIcon}
-          alt='filter_icon'
-          onClick={() => {
-            setShowExtraFilters(true)
-          }}
-        />
-        <div className='search_btn'>
-          <img src={searchIcon} alt='search' />
+      <div className='main_filter'>
+        {window.innerWidth >= 640 && (
+          <img
+            src={searchIconPurple}
+            alt='search_icon'
+            onClick={() => {
+              window.innerWidth < 640 && setShowExtraFilters(true)
+            }}
+          />
+        )}
+        <input type='text' placeholder='Filter by title...' />
+        <div className='filter_options'>
+          {window.innerWidth < 640 && (
+            <img
+              src={filterIcon}
+              alt='filter_icon'
+              onClick={() => {
+                window.innerWidth < 640 && setShowExtraFilters(true)
+              }}
+            />
+          )}
+          {window.innerWidth < 640 && (
+            <div className='search_btn'>
+              <img src={searchIcon} alt='search' />
+            </div>
+          )}
         </div>
       </div>
 
@@ -35,9 +51,9 @@ const Filter = () => {
               (e.target as Element).classList.value === 'check_box' ||
               (e.target as Element).classList.value === 'second_search'
             ) {
-              setShowExtraFilters(true)
+              window.innerWidth < 640 && setShowExtraFilters(true)
             } else {
-              setShowExtraFilters(false)
+              window.innerWidth < 640 && setShowExtraFilters(false)
             }
           }}
         >

@@ -66,11 +66,24 @@ a {
     justify-content: space-between;
     align-items: stretch;
   }
+
+  .filter_main_container {
+    position: absolute;
+    left: 2rem;
+    right: 2rem;
+  }
 }
 
 @media (min-width: 950px) {
   .home,
   .details_page {
     padding: 1rem 6rem;
+  }
+
+  .filter_main_container {
+    position: absolute;
+    top: 6.5rem;
+    left: 6rem;
+    right: 6rem;
   }
 }
