@@ -8,11 +8,13 @@ import locationIcon from '../../assets/desktop/icon-location.svg'
 import { useGlobalContext } from '../../context/context'
 
 const Filter = () => {
-  const globalContext = useGlobalContext()
-  const showExtraFilters = globalContext?.showExtraFilters
-  const setShowExtraFilters = globalContext?.setShowExtraFilters!
+  const { isDark, showExtraFilters, setShowExtraFilters } = useGlobalContext()!
+
   return (
-    <section className='filter'>
+    <section
+      className='filter'
+      style={!isDark ? { backgroundColor: 'white' } : {}}
+    >
       <div className='main_filter'>
         {window.innerWidth >= 640 && (
           <img
@@ -57,7 +59,10 @@ const Filter = () => {
             }
           }}
         >
-          <div className='more_options'>
+          <div
+            className='more_options'
+            style={!isDark ? { backgroundColor: 'white' } : {}}
+          >
             <div className='location'>
               <img src={locationIcon} alt='location_icon' />
               <input
@@ -71,7 +76,9 @@ const Filter = () => {
 
             <div className='full_time'>
               <div className='check_box'></div>
-              <p>Full Time</p>
+              <p style={!isDark ? { color: 'var(--secondaryBackground)' } : {}}>
+                Full Time
+              </p>
             </div>
 
             <button className='second_search'>Search</button>

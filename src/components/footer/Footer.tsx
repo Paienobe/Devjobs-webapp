@@ -1,4 +1,5 @@
 import React from 'react'
+import { useGlobalContext } from '../../context/context'
 import './Footer.css'
 
 const Footer = ({
@@ -10,10 +11,13 @@ const Footer = ({
   position: string
   company: string
 }) => {
+  const { isDark } = useGlobalContext()!
   return (
-    <footer>
+    <footer style={!isDark ? { backgroundColor: 'white' } : {}}>
       <div>
-        <h2>{position}</h2>
+        <h2 style={!isDark ? { color: 'var(--secondaryBackground)' } : {}}>
+          {position}
+        </h2>
         <p>{company}</p>
       </div>
       <a href={apply} className='apply_btn'>
