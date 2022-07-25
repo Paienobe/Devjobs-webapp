@@ -1,4 +1,5 @@
 import React from 'react'
+import { useGlobalContext } from '../../context/context'
 import './JobCard.css'
 import { logos } from './logo_imports'
 
@@ -23,8 +24,12 @@ const JobCard = ({
   contract,
   location,
 }: JobCardProps) => {
+  const { isDark } = useGlobalContext()!
   return (
-    <section className='job_card'>
+    <section
+      className='job_card'
+      style={!isDark ? { backgroundColor: 'white' } : {}}
+    >
       <div
         className='logo_container'
         style={{ backgroundColor: logoBackground }}
@@ -38,7 +43,9 @@ const JobCard = ({
         <p>{contract}</p>
       </div>
 
-      <h1>{position}</h1>
+      <h1 style={!isDark ? { color: 'var(--secondaryBackground)' } : {}}>
+        {position}
+      </h1>
 
       <div className='job_card_name_and_location'>
         <p>{company}</p>

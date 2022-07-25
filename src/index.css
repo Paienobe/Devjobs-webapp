@@ -4,7 +4,9 @@
   --purpleColor: #5964e0;
   --textColor: #6e8098;
   --smoothTransition: all 0.25s ease-in-out;
+  --mainBackground: #121721;
   --secondaryBackground: #19202d;
+  --lightBackground: #e9e9e9;
 }
 
 * {
@@ -12,10 +14,11 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  transition: background 0.25s ease-in-out;
 }
 
 body {
-  background-color: #121721;
+  background-color: var(--mainBackground);
   color: var(--textColor);
   font-family: 'Kumbh Sans', sans-serif;
   font-size: 18px;

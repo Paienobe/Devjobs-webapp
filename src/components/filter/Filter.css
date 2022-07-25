@@ -9,6 +9,13 @@
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
 }
 
+.main_filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .filter input {
   padding: 0.5rem 0;
   background-color: transparent;

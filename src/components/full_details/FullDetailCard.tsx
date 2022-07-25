@@ -1,6 +1,7 @@
 import React from 'react'
 import './FullDetailCard.css'
 import { JobType } from '../../types/types'
+import { useGlobalContext } from '../../context/context'
 
 const FullDetailCard = ({
   postedAt,
@@ -12,8 +13,12 @@ const FullDetailCard = ({
   requirements,
   role,
 }: JobType) => {
+  const { isDark } = useGlobalContext()!
   return (
-    <section className='full_detail_card'>
+    <section
+      className='full_detail_card'
+      style={!isDark ? { backgroundColor: 'white' } : {}}
+    >
       <div className='card_head'>
         <div>
           <div className='job_card_details'>
@@ -22,7 +27,9 @@ const FullDetailCard = ({
             <p>{contract}</p>
           </div>
 
-          <h1>{position}</h1>
+          <h1 style={!isDark ? { color: 'var(--secondaryBackground)' } : {}}>
+            {position}
+          </h1>
 
           <p className='job_card_location'>{location}</p>
         </div>
@@ -35,7 +42,9 @@ const FullDetailCard = ({
       <p className='description'>{description}</p>
 
       <div className='requirements'>
-        <h1>Requirements</h1>
+        <h1 style={!isDark ? { color: 'var(--secondaryBackground)' } : {}}>
+          Requirements
+        </h1>
         <p>{requirements.content}</p>
         <ul>
           {requirements.items.map((item, index) => {
@@ -45,7 +54,9 @@ const FullDetailCard = ({
       </div>
 
       <div className='role'>
-        <h1>What You Will Do</h1>
+        <h1 style={!isDark ? { color: 'var(--secondaryBackground)' } : {}}>
+          What You Will Do
+        </h1>
         <p>{role.content}</p>
         <ol>
           {role.items.map((item, index) => {
