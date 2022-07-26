@@ -30,7 +30,7 @@ export const reducer = (state: StateType, action: ActionType) => {
     return initialState
   } else if (action.type === 'FILTER_BY_TITLE') {
     if (action.payload) {
-      const jobsWithTitle = state.filter((job) => {
+      const jobsWithTitle = initialState.filter((job) => {
         return job.position.toLowerCase().includes(action.payload.toLowerCase())
       })
 
