@@ -5,14 +5,13 @@ import { useGlobalContext } from '../context/context'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
-  const globalContext = useGlobalContext()
-  const { isFullTime } = useGlobalContext()!
-  const [shownJobs, setShownJobs] = useState(8)
-  const jobs = globalContext?.state.slice(0, shownJobs)
+  const { isFullTime, state } = useGlobalContext()!
+  const [shownJobs, setShownJobs] = useState(Math.ceil(state.length / 2))
+  const jobs = state.slice(0, shownJobs)
 
   useEffect(() => {
-    window.innerWidth >= 950 && setShownJobs(shownJobs + 10)
-  })
+    window.innerWidth >= 950 && setShownJobs(state.length)
+  }, [])
 
   return (
     <main className='home'>
@@ -28,7 +27,7 @@ const Home = () => {
           )
         })}
       </section>
-      {shownJobs <= 8 && !isFullTime && (
+      {shownJobs < state.length && (
         <button
           className='more_btn'
           onClick={() => {

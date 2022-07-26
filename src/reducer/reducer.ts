@@ -13,7 +13,11 @@ type TitelOrLocationAction = {
   payload: string
 }
 
-export type ActionType = TitelOrLocationAction | FulltimeAction
+type ResetAction = {
+  type: 'RESET'
+}
+
+export type ActionType = TitelOrLocationAction | FulltimeAction | ResetAction
 
 export const reducer = (state: StateType, action: ActionType) => {
   if (action.type === 'FILTER_BY_FULLTIME') {
@@ -26,8 +30,19 @@ export const reducer = (state: StateType, action: ActionType) => {
     return initialState
   } else if (action.type === 'FILTER_BY_TITLE') {
     if (action.payload) {
+      const jobsWithTitle = state.filter((job) => {
+        return job.position.toLowerCase().includes(action.payload.toLowerCase())
+      })
+
+      if (jobsWithTitle.length > 0) {
+        return jobsWithTitle
+      } else {
+        return initialState
+      }
     }
     return state
+  } else if (action.type === 'RESET') {
+    return initialState
   }
   return state
 }

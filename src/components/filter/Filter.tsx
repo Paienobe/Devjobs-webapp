@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Filter.css'
 import filterIcon from '../../assets/mobile/icon-filter.svg'
 import searchIcon from '../../assets/desktop/icon-search.svg'
@@ -28,6 +28,16 @@ const Filter = () => {
   const filterByTitle = () => {
     dispatch({ type: 'FILTER_BY_TITLE', payload: title })
   }
+
+  const reset = () => {
+    dispatch({ type: 'RESET' })
+  }
+
+  useEffect(() => {
+    if (!title && !location) {
+      reset()
+    }
+  }, [title, location])
 
   return (
     <section
