@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
   const globalContext = useGlobalContext()
+  const { isFullTime } = useGlobalContext()!
   const [shownJobs, setShownJobs] = useState(8)
   const jobs = globalContext?.state.slice(0, shownJobs)
 
@@ -27,7 +28,7 @@ const Home = () => {
           )
         })}
       </section>
-      {shownJobs <= 8 && (
+      {shownJobs <= 8 && !isFullTime && (
         <button
           className='more_btn'
           onClick={() => {
