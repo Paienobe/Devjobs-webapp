@@ -14,18 +14,14 @@ const Footer = ({
   const { isDark } = useGlobalContext()!
   return (
     <footer style={!isDark ? { backgroundColor: 'white' } : {}}>
-      <div>
-        <h2
-          style={
-            !isDark && window.innerWidth >= 950
-              ? { color: 'var(--secondaryBackground)' }
-              : {}
-          }
-        >
-          {position}
-        </h2>
-        <p>{company}</p>
-      </div>
+      {window.innerWidth >= 950 && (
+        <div>
+          <h2 style={!isDark ? { color: 'var(--secondaryBackground)' } : {}}>
+            {position}
+          </h2>
+          <p>{company}</p>
+        </div>
+      )}
       <a href={apply} className='apply_btn'>
         Apply Now
       </a>
