@@ -20,6 +20,8 @@ type AppContextType = {
   setShowExtraFilters: React.Dispatch<React.SetStateAction<boolean>>
   isDark: boolean
   setIsDark: React.Dispatch<React.SetStateAction<boolean>>
+  isFullTime: boolean
+  setIsFullTime: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export const AppContext = createContext<AppContextType | null>(null)
@@ -27,6 +29,7 @@ export const AppContext = createContext<AppContextType | null>(null)
 export const AppProvider = ({ children }: AppProviderProps) => {
   const [state, dispatch] = useReducer(reducer, initialState)
   const [showExtraFilters, setShowExtraFilters] = useState(false)
+  const [isFullTime, setIsFullTime] = useState(false)
   const [isDark, setIsDark] = useState(true)
 
   useEffect(() => {
@@ -58,6 +61,8 @@ export const AppProvider = ({ children }: AppProviderProps) => {
         setShowExtraFilters,
         isDark,
         setIsDark,
+        isFullTime,
+        setIsFullTime,
       }}
     >
       {children}
