@@ -18,15 +18,28 @@ const Home = () => {
       <div className='filter_main_container'>
         <Filter />
       </div>
-      <section className='jobs_container'>
-        {jobs?.map((job) => {
-          return (
-            <Link to={`/jobs/${job.company}`} key={job.id}>
-              <JobCard {...job} />
-            </Link>
-          )
-        })}
-      </section>
+      {state.length > 0 ? (
+        <section className='jobs_container'>
+          {jobs?.map((job) => {
+            return (
+              <Link to={`/jobs/${job.company}`} key={job.id}>
+                <JobCard {...job} />
+              </Link>
+            )
+          })}
+        </section>
+      ) : (
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: '100vh',
+          }}
+        >
+          <h1>No jobs found</h1>
+        </div>
+      )}
       {shownJobs < state.length && (
         <button
           className='more_btn'
