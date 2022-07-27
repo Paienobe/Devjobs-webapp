@@ -34,13 +34,19 @@ export const reducer = (state: StateType, action: ActionType) => {
         return job.position.toLowerCase().includes(action.payload.toLowerCase())
       })
 
-      if (jobsWithTitle.length > 0) {
-        return jobsWithTitle
-      } else {
-        return initialState
-      }
+      return jobsWithTitle
     }
     return state
+  } else if (action.type === 'FILTER_BY_LOCATION') {
+    if (action.payload) {
+      const jobsInSearchedLocation = initialState.filter((job) => {
+        return job.location.toLowerCase().includes(action.payload)
+      })
+
+      return jobsInSearchedLocation
+    }
+
+    return initialState
   } else if (action.type === 'RESET') {
     return initialState
   }

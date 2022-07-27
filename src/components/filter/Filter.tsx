@@ -29,6 +29,10 @@ const Filter = () => {
     dispatch({ type: 'FILTER_BY_TITLE', payload: title })
   }
 
+  const filterByLocation = () => {
+    dispatch({ type: 'FILTER_BY_LOCATION', payload: location })
+  }
+
   const reset = () => {
     dispatch({ type: 'RESET' })
   }
@@ -59,6 +63,7 @@ const Filter = () => {
           placeholder='Filter by title...'
           value={title}
           onChange={(e) => {
+            setLocation('')
             setTitle(e.target.value)
           }}
         />
@@ -91,8 +96,9 @@ const Filter = () => {
           onClick={(e) => {
             if (
               (e.target as Element).classList.value === 'location_input' ||
-              (e.target as Element).classList.value === 'check_box' ||
-              (e.target as Element).classList.value === 'second_search'
+              (e.target as Element).classList.value === 'check_box'
+              // ||
+              // (e.target as Element).classList.value === 'second_search'
             ) {
               window.innerWidth < 640 && setShowExtraFilters(true)
             } else {
@@ -110,6 +116,11 @@ const Filter = () => {
                 type='text'
                 placeholder='Filter by location...'
                 className='location_input'
+                value={location}
+                onChange={(e) => {
+                  setTitle('')
+                  setLocation(e.target.value)
+                }}
               />
             </div>
 
@@ -144,7 +155,23 @@ const Filter = () => {
               </p>
             </div>
 
-            <button className='second_search'>Search</button>
+            <button
+              className='second_search'
+              onClick={() => {
+                if (window.innerWidth < 640) {
+                  filterByLocation()
+                  setShowExtraFilters(false)
+                } else {
+                  if (title) {
+                    filterByTitle()
+                  } else if (location) {
+                    filterByLocation()
+                  }
+                }
+              }}
+            >
+              Search
+            </button>
           </div>
         </div>
       )}
