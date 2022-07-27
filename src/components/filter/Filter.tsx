@@ -119,7 +119,7 @@ const Filter = () => {
                 value={location}
                 onChange={(e) => {
                   setTitle('')
-                  setLocation(e.target.value)
+                  setLocation(e.target.value.toLowerCase())
                 }}
               />
             </div>
